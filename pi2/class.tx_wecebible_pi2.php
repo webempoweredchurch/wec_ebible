@@ -30,7 +30,7 @@
 require_once(PATH_tslib.'class.tslib_pibase.php');
 require_once(t3lib_extMgm::extPath('wec_ebible').'class.tx_wecebible_itemsProcFunc.php');
 require_once(t3lib_extMgm::extPath('wec_ebible').'class.tx_wecebible_api.php');
-
+ 
 /**
  *
  * Plugin for Bible translation selection from eBible.com
