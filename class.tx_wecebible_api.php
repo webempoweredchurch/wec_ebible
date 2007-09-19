@@ -46,7 +46,7 @@ class tx_wecebible_api {
 	 * @todo 	Check for API Key in the backend module
 	 *			Don't add the Javascript if there's no API Key defined
 	 */	
-	function main(&$params, &$references) {
+	function main() {
 		if(TYPO3_MODE == 'FE') {
 			$conf = $GLOBALS['TSFE']->tmpl->setup['plugin.']['tx_wecebible_api.'];
 		
@@ -92,8 +92,9 @@ class tx_wecebible_api {
 			$argString = implode("&", $argArray);
 		
 			/* Include javascript header */
-			$includeJavascript = '<script type="text/javascript" src="http://ebible.com/api/ebibleicious?'.$argString.'"></script>';
-			$params['pObj']->content = str_replace('</body>', $includeCSS.$includeJavascript.'</body>', $params['pObj']->content);
+			$includeJavascript = '<script type="text/javascript" src="'.t3lib_extMgm::siteRelPath('wec_ebible').'res/ebibleicious.js?'.$argString.'"></script>';
+			$GLOBALS['TSFE']->additionalHeaderData[] = $includeCSS.$includeJavascript;
+			// $params['pObj']->content = str_replace('</head>', $includeCSS.$includeJavascript.'</head>', $params['pObj']->content);
 		}
 	}
 	
