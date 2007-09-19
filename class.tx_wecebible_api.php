@@ -43,8 +43,6 @@ class tx_wecebible_api {
 	 * @param	array		Conf array.
 	 * @return	none
 	 *
-	 * @todo 	Check for API Key in the backend module
-	 *			Don't add the Javascript if there's no API Key defined
 	 */	
 	function main($content,$conf) {
 
