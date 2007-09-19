@@ -46,56 +46,52 @@ class tx_wecebible_api {
 	 * @todo 	Check for API Key in the backend module
 	 *			Don't add the Javascript if there's no API Key defined
 	 */	
-	function main() {
-		if(TYPO3_MODE == 'FE') {
-			$conf = $GLOBALS['TSFE']->tmpl->setup['plugin.']['tx_wecebible_api.'];
-		
-			// only load this plugin and parse if it's enabled
-			if(!$conf['config.']['enableParsing']) return false;
-		
-			if($conf['config.']['useExternalCSS']) {
-				$includeCSS = '<link href="http://ebible.com/stylesheets/ebSnippet.css" media="screen" rel="stylesheet" type="text/css" />';
-			}
-		
-			$argArray = array();
-		
-			/* Processs cObjects */
-			$cObj = t3lib_div::makeInstance('tslib_cObj');			
-			foreach($conf['url.'] as $key=>$type) {
-				if($key[strlen($key)-1] != ".") {
-					$value = $cObj->cObjGetSingle($type, $conf['url.'][$key.'.']);
-					if($value) {
-						$argArray[$key] = $key.'='.$value;
-					}
+	function main($content,$conf) {
+
+		// only load this plugin and parse if it's enabled
+		if(!$conf['config.']['enableParsing']) return false;
+	
+		if($conf['config.']['useExternalCSS']) {
+			$includeCSS = '<link href="http://ebible.com/stylesheets/ebSnippet.css" media="screen" rel="stylesheet" type="text/css" />';
+		}
+	
+		$argArray = array();
+	
+		/* Processs cObjects */
+		$cObj = t3lib_div::makeInstance('tslib_cObj');			
+		foreach($conf['url.'] as $key=>$type) {
+			if($key[strlen($key)-1] != ".") {
+				$value = $cObj->cObjGetSingle($type, $conf['url.'][$key.'.']);
+				if($value) {
+					$argArray[$key] = $key.'='.$value;
 				}
 			}
-
-			/* If the current user has selected a translation and override is allowed */
-			$userTranslation = tx_wecebible_api::getDefaultTranslation();
-			if(!empty($userTranslation) && $conf['config.']['allowUserTranslation']) {
-				$argArray['translation'] = 'translation='.$userTranslation;
-			}
-
-			if(empty($argArray['key'])) {
-				$domainmgr = t3lib_div::makeInstance('tx_wecebible_domainmgr');
-				$key = $domainmgr->getKey();
-				if(empty($key)) $key  = 'EBIBLE_DEMO';
-				$argArray['key'] = 'key='.$key;
-			}
-		
-			// if no api key is set, don't output any javascript
-			if(empty($argArray['key']) || $argArray['key'] == 'key=') return null;
-		
-			// add version string to arg array
-			$argArray['v'] = 'v=1.0';
-		
-			$argString = implode("&", $argArray);
-		
-			/* Include javascript header */
-			$includeJavascript = '<script type="text/javascript" src="'.t3lib_extMgm::siteRelPath('wec_ebible').'res/ebibleicious.js?'.$argString.'"></script>';
-			$GLOBALS['TSFE']->additionalHeaderData[] = $includeCSS.$includeJavascript;
-			// $params['pObj']->content = str_replace('</head>', $includeCSS.$includeJavascript.'</head>', $params['pObj']->content);
 		}
+
+		/* If the current user has selected a translation and override is allowed */
+		$userTranslation = tx_wecebible_api::getDefaultTranslation();
+		if(!empty($userTranslation) && $conf['config.']['allowUserTranslation']) {
+			$argArray['translation'] = 'translation='.$userTranslation;
+		}
+
+		if(empty($argArray['key'])) {
+			$domainmgr = t3lib_div::makeInstance('tx_wecebible_domainmgr');
+			$key = $domainmgr->getKey();
+			if(empty($key)) $key  = 'EBIBLE_DEMO';
+			$argArray['key'] = 'key='.$key;
+		}
+	
+		// if no api key is set, don't output any javascript
+		if(empty($argArray['key']) || $argArray['key'] == 'key=') return null;
+	
+		// add version string to arg array
+		$argArray['v'] = 'v=1.0';
+	
+		$argString = implode("&", $argArray);
+	
+		/* Include javascript header */
+		$includeJavascript = '<script type="text/javascript" src="'.t3lib_extMgm::siteRelPath('wec_ebible').'res/ebibleicious.js?'.$argString.'"></script>';
+		$GLOBALS['TSFE']->additionalHeaderData[] = $includeCSS.$includeJavascript;
 	}
 	
 	/**
