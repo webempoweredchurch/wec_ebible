@@ -33,7 +33,7 @@ plugin.tx_wecebible_pi2 {
 
 # Include the PHP
 includeLibs.tx_wecebible_api = EXT:wec_ebible/class.tx_wecebible_api.php
-plugin.tx_wecebible_api = USER
+plugin.tx_wecebible_api = USER_INT
 plugin.tx_wecebible_api.userFunc = tx_wecebible_api->main
 
 # Includes the eBible Javascript API.  If you customize the Typoscript setup for
