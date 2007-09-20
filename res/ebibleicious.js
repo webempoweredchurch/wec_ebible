@@ -310,6 +310,7 @@ function onHideVersePopup(e){
   if (popup){
     popup.style.visibility = 'hidden';
     currentVisiblePopup = null;
+		popup.style.opacity='1'; // Firefox
   }
 }
 
