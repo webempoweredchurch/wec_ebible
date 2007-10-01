@@ -614,20 +614,20 @@ function ebdLoad() {
  *************************************************************************/
 function findPassages(elm, class_name) {
     var vol = 'I+|1st|2nd|3rd|First|Second|Third|1|2|3';
-    var bok = 'Genesis|Gen|Exodus|Exod?|Leviticus|Lev|Levit?|Numbers|'+
-        'Nmb|Numb?|Deuteronomy|Deut?|Joshua|Josh?|Judges|Jdg|Judg?|Ruth|Ru|'+
-        'Samuel|Sam|Sml|Kings|Kngs?|Kin?|Chronicles|Chr|Chron|Ezra|Ez|'+
-        'Nehemiah|Nehem?|Esther|Esth?|Job|Jb|Psalms?|Psa?|Proverbs?|Prov?|'+
-        'Ecclesiastes|Eccl?|Songs?ofSolomon|Songs?|Isaiah|Isa|Jeremiah|'+
-        'Jer|Jerem|Lamentations|Lam|Lament?|Ezekiel|Ezek?|Daniel|Dan|Hosea|'+
-        'Hos|Joel|Jo|Amos|Am|Obadiah|Obad?|Jonah|Jon|Micah|Mic|Nahum|Nah|'+
-        'Habakkuk|Hab|Habak|Zephaniah|Zeph|Haggai|Hag|Hagg|Zechariah|Zech?|'+
-        'Malachi|Malac?|Mal|Mat{1,2}hew|Mat?|Mark|Mrk|Luke|Lu?k|John|Jhn|Jo|'+
-        'Acts?|Ac|Romans|Rom|Corinthians|Cor|Corin|Galatians|Gal|Galat|'+
-        'Ephesians|Eph|Ephes|Philippians|Phili?|Colossians|Col|Colos|'+
-        'Thessalonians|Thes|Timothy|Tim|Titus|Tts|Tit|Philemon|Phil?|'+
-        'Hebrews|Hebr?|James|Jam|Jms|Peter|Pete?|Jude|Ju|Revelations?|Rev|'+
-        'Revel';
+    var bok = 'Genesis|Gen?|Gen\.?|Exodus|Exod?|Exod\.?|Ex\.?|Leviticus|Lev\.?|Levit\.?|' +
+		'Numbers|Nmb\.?|Numb\.?|Num\.?|Deuteronomy|Deu\.?|Deut\.?|Dt\.?|Joshua|Josh?|Josh\.?|Jsh\.?|' +
+		'Judges|Jdg\.?|Judg\.?|Ruth|Ru\.?|Samuel|Sam\.?|Sml\.?|Kings|Kngs\.?|Kin\.?|' +
+		'Chronicles|Chr\.?|Chron\.?|Ezra|Ez\.?|Nehemiah|Nehem\.?|Neh\.?|Esther|Esth\.?|Est\.?|Job|Jb\.?|Psalms?|Psa\.?|Ps\.?|' +
+		'Proverbs?|Prov\.?|Pr\.?|Ecclesiastes|Eccl\.?|Eccl?|Songs?ofSolomon|Songs\.?|Song\.?|' +
+		'Isaiah|Isa\.?|Is\.?|Jeremiah|Jer\.?|Jerem\.?|Lamentations|' +
+		'Lam\.?|Lament?|Lament\.?|Ezekiel|Ezek\.?|Ezk\.?|Daniel|Dan\.?|Hosea|Hos\.?|Joel|' +
+		'Jo\.?|Amos|Am\.?|Obadiah|Obad?|Obad\.?|Ob\.?|Jonah|Jon\.?|Micah|Mic\.?|Nahum|Nah\.?|' +
+		'Habakkuk|Hab\.?|Habak\.?|Zephaniah|Zeph\.?|Zph\.?|Haggai|Hag\.?|Hagg\.?|Zechariah|Zech?|' +
+		'Malachi|Malac\.?|Mal\.?|Mat{1,2}hew|Mat\.?|Mat?|Mt\.?|Mark|Mrk\.?|Mk\.?|Luke|Lk\.?|John|' +
+		'Jhn\.?|Jo\.?|Acts?|Ac\.?|Romans|Rom\.?|Corinthians|Cor\.?|Corin\.?|Galatians|Gal\.?|Galat\.?|Ephesians|Eph\.?|Ephes\.?|' +
+		'Philippians|Phili?|Phil\.?|Colossians|Col\.?|Colos\.?|Thessalonians|Thes\.?|Timothy|Tim\.?|' +
+		'Titus|Tts\.?|Tit\.?|Philemon|Phlm\.?|Hebrews|Hebr\.?|Heb\.?|James|Jam\.?|Jas\.?|Jms\.?|' +
+		'Peter|Pet\.?|Jude|Ju\.?|Revelations?|Rev\.?|Revel\.?';
     var ver = '\\d+(:\\d+)?(?:\\s?[-&]\\s?\\d+)?';
     var regex = '\\b(?:('+vol+')\\s+)?('+bok+')\\s+('+ver+'(?:\\s?[,]\\s?'+
         ver+')*)\\b';
