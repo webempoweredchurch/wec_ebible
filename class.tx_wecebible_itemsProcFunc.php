@@ -31,6 +31,8 @@
  * General purpose class for providing a list of translations.
  *
  * @author	Web-Empowered Church Team <ebible@webempoweredchurch.org>
+ * @package TYPO3
+ * @subpackage tx_wecebible
  */
 class tx_wecebible_itemsProcFunc {
 	

@@ -41,13 +41,13 @@ $LANG->includeLLFile('EXT:wec_ebible/mod1/locallang.xml');
 require_once(PATH_t3lib.'class.t3lib_scbase.php');
 $BE_USER->modAccess($MCONF,1);	// This checks permissions and exits if the users has no permission for entry.
 	// DEFAULT initialization of a module [END]
-require_once('../class.tx_wecebible_domainmgr.php');
+require_once(t3lib_extMgm::extPath('wec_ebible').'class.tx_wecebible_domainmgr.php');
 
 
 /**
  * Module 'WEC eBible Domain Admin' for the 'wec_ebible' extension.
  *
- * @author	Web-Empowered Church Team <dev@webempoweredchurch.org>
+ * @author	Web-Empowered Church Team <ebible@webempoweredchurch.org>
  * @package	TYPO3
  * @subpackage	tx_ebible
  */
@@ -181,13 +181,18 @@ class  tx_wecebible_module1 extends t3lib_SCbase {
 		}
 	}
 
+	/**
+	 * Generates a link to the current page with additional parameters added.
+	 * @param		string		Additional parameters for the URL.
+	 * @return		string		The new URL.
+	 */
 	function linkSelf($addParams)	{
 		return htmlspecialchars('index.php?id='.$this->pObj->id.'&showLanguage='.rawurlencode(t3lib_div::_GP('showLanguage')).$addParams);
 	}
 	
 
 
-	/*
+	/**
 	 * Admin module for setting eBible API Key.
 	 * @return		string		HTML output of the module.
 	 */
@@ -197,7 +202,7 @@ class  tx_wecebible_module1 extends t3lib_SCbase {
 		$domainmgrClass = t3lib_div::makeInstanceClassname('tx_wecebible_domainmgr');
 		$domainmgr = new $domainmgrClass();
 		
-		$blankDomainValue = 'Enter domain....';
+		$blankDomainValue = $LANG->getLL('blankDomainValue');
 		
 		$cmd = t3lib_div::_GP('cmd');
 		
@@ -247,12 +252,12 @@ class  tx_wecebible_module1 extends t3lib_SCbase {
 			
 			// show the first summary text above all the already saved domains
 			if($number != 0 && $index == 0) {
-				$content[] = '<h1>Existing Domains</h1>';
+				$content[] = '<h1>'.$LANG->getLL('existingDomainsTitle').'</h1>';
 				$content[] = '<p style="margin-bottom:15px;">';
 				$content[] = $LANG->getLL('alreadySavedDomains');
 				$content[] = '</p>';
 			} else if ($number == $index) {
-				$content[] = '<h1>Suggested Domains</h1>';
+				$content[] = '<h1>'.$LANG->getLL('suggestedDomainsTitle').'</h1>';
 				$content[] = '<p style="margin-bottom:15px;">';
 				$content[] = $LANG->getLL('suggestedDomains');
 				$content[] = '</p>';
@@ -266,7 +271,7 @@ class  tx_wecebible_module1 extends t3lib_SCbase {
 			
 			$content[] = '<div class="domain-item" style="margin-bottom: 15px;">';
 			$content[] = '<div style="width: 25em;"><strong>'. $key .'</strong> '. $deleteButton .'</div>';
-			$content[] = '<div><label style="display: none;" for="key_'. $index .'">'.$LANG->getLL('googleMapsApiKey').': </label></div>';
+			$content[] = '<div><label style="display: none;" for="key_'. $index .'">'.$LANG->getLL('eBibleApiKey').': </label></div>';
 			$content[] = '<div><input style="width: 58em;" id="key_'. $index .'" name="key_'. $index .'" value="'.$value.'" /></div>';
 			$content[] = '<input type="hidden" name="domain_'.$index.'" value="'. $key .'">';
 			$content[] = '</div>';
@@ -276,7 +281,7 @@ class  tx_wecebible_module1 extends t3lib_SCbase {
 		$content[] = '<div id="adddomainbutton" style="margin-bottom: 15px;"><a href="#" onclick="document.getElementById(\'blank-domain\').style.display = \'block\'; document.getElementById(\'adddomainbutton\').style.display = \'none\'; document.getElementById(\'domain_'.$index.'\').value=\''. $blankDomainValue .'\';">Manually add a new API key for domain</a></div>';
 		$content[] = '<div class="domain-item" id="blank-domain" style="margin-bottom: 15px; display: none;">';
 		$content[] = '<div style="width: 35em;"><label style="display: none;" for="domain_'. $index .'">Domain: </label><input style="width: 12em;" id="domain_'. $index .'" name="domain_'. $index .'" value="" onfocus="this.value=\'\';"/> <input type="image" '.t3lib_iconWorks::skinImg($GLOBALS['BACK_PATH'],'gfx/garbage.gif','width="11" height="12"').' onclick="document.getElementById(\'key_'. $index .'\').value = \'\'; document.getElementById(\'blank-domain\').style.display =\'none\'; document.getElementById(\'adddomainbutton\').style.display = \'block\'; return false;" /></div>';
-		$content[] = '<div><label style="display: none;" for="key_'. $index .'">'.$LANG->getLL('googleMapsApiKey').': </label></div>';
+		$content[] = '<div><label style="display: none;" for="key_'. $index .'">'.$LANG->getLL('eBibleApiKey').': </label></div>';
 		$content[] = '<div><input style="width: 58em;" id="key_'. $index .'" name="key_'. $index .'" value="" /></div>';
 		$content[] = '</div>';
 
@@ -286,7 +291,7 @@ class  tx_wecebible_module1 extends t3lib_SCbase {
 		return implode(chr(10), $content);
 	}
 	
-	/*
+	/**
 	 * Looks up the API key in extConf within localconf.php
 	 * @return		array		The API keys.
 	 */
@@ -297,7 +302,7 @@ class  tx_wecebible_module1 extends t3lib_SCbase {
 		return $apiKeys;
 	}
 	
-	/*
+	/**
 	 * Saves the API key to extConf in localconf.php.
 	 * @param		string		The new API Key.
 	 * @return		none
@@ -454,7 +459,7 @@ class  tx_wecebible_module1 extends t3lib_SCbase {
 
 
 if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/wec_ebible/mod1/index.php'])	{
-include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/wec_ebible/mod1/index.php']);
+	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/wec_ebible/mod1/index.php']);
 }
 
 

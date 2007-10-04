@@ -8,11 +8,13 @@
 		<languageKey index="default" type="array">
 			<label index="title">WEC eBible Domain Admin</label>
 			<label index="function1">API Key Settings</label>
+			<label index="existingDomainsTitle">Existing Domains</label>
 			<label index="alreadySavedDomains">
 				<![CDATA[
 				The Domains and API keys below have already been saved and are being used.
 				]]>
 			</label>
+			<label index="suggestedDomainsTitle">Suggested Domains</label>
 			<label index="suggestedDomains">
 				<![CDATA[
 				Below is a suggested list of domains that you may want to add API keys for.
@@ -25,7 +27,8 @@
 				http://www.ebible.com/api/signup</a>. You will need to create a free account with eBible.org if you haven't already.
 				]]>
 			</label>
-			<label index="eBibleApiKey">Google Maps API Key</label>
+			<label index="blankDomainValue">Enter domain...</label>
+			<label index="eBibleApiKey">eBible API Key</label>
 			<label index="submit">Submit</label>
 		</languageKey>
 		

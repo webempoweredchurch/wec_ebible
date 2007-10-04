@@ -30,6 +30,8 @@
  * Class that adds the wizard icon.
  *
  * @author	Web-Empowered Church Team <ebible@webempoweredchurch.org>
+ * @package TYPO3
+ * @subpackage tx_wecebible
  */
 
 class tx_wecebible_pi2_wizicon {

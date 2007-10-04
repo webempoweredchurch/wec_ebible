@@ -34,6 +34,8 @@ require_once(t3lib_extMgm::extPath('wec_ebible').'class.tx_wecebible_domainmgr.p
  * Main API class for eBible scripture parsing.
  *
  * @author	Web-Empowered Church Team <ebible@webempoweredchurch.org>
+ * @package TYPO3
+ * @subpackage tx_wecebible
  */	
 class tx_wecebible_api {
 	

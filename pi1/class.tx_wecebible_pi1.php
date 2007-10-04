@@ -34,6 +34,8 @@ require_once(t3lib_extMgm::extPath('wec_ebible').'class.tx_wecebible_api.php');
  *
  * Plugin for eBible.com Verse of the Day
  * @author	Web-Empowered Church Team <ebible@webempoweredchurch.org>
+ * @package TYPO3
+ * @subpackage tx_wecebible
  */
 class tx_wecebible_pi1 extends tslib_pibase {
 	var $prefixId = 'tx_wecebible_pi1';		// Same as class name
@@ -70,9 +72,7 @@ class tx_wecebible_pi1 extends tslib_pibase {
 		}
 
 				
-		$content = '<!-- begin eBible.com Verse of the Day -->
-		   <script type="text/javascript" src="http://ebible.com/api/votd?source='.$translation.'"></script>
-		<!-- end eBible.com Verse of the Day -->';
+		$content = '<script type="text/javascript" src="http://ebible.com/api/votd?source='.$translation.'"></script>';
 
 		return $this->pi_wrapInBaseClass($content);
 	}

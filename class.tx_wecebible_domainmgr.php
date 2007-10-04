@@ -30,10 +30,10 @@
 require_once(PATH_t3lib.'class.t3lib_install.php');
 
 /**
- * Domain <=> API Key manager class for the WEC Map extension.  This class
+ * Domain <=> API Key manager class for the WEC eBible extension.  This class
  * provides user functions for handling domains and API keys
  * 
- * @author Web-Empowered Church Team <map@webempoweredchurch.org>
+ * @author Web-Empowered Church Team <ebible@webempoweredchurch.org>
  * @package TYPO3
  * @subpackage tx_wecebible
  */
@@ -42,6 +42,12 @@ class tx_wecebible_domainmgr {
 	var $extKey = 'wec_ebible';
 	
 	
+	/**
+	 * Gets the get for the given domain.  If no domain is given, checks HTTP_HOST.
+	 *
+	 * @param		string		The domain to retrieve a key for.
+	 * @return		string		The API key for the specified domain.
+	 */
 	function getKey($domain = null) {
 		
 		// get key from configuration
@@ -73,6 +79,13 @@ class tx_wecebible_domainmgr {
 		}	
 	}
 	
+	/**
+	 * Process domains and API keys from POST data.  Used with the backend
+	 * module for API key management.
+	 *
+	 * @param		array		Array of POST data.
+	 * @return		array		Array of domains and API keys.
+	 */
 	function processPost($post) {
 		
 		$allDomains = $this->getAllDomains();
@@ -115,9 +128,9 @@ class tx_wecebible_domainmgr {
 		return array_reverse($returnArray);
 	}
 	
-	/*
+	/**
 	 * Looks up the API key in extConf within localconf.php
-	 * @return		array		The Google Maps API keys.
+	 * @return		array		The eBible API keys.
 	 */
 	function getApiKeys() {
 		
@@ -126,9 +139,9 @@ class tx_wecebible_domainmgr {
 		return $apiKeys;
 	}
 	
-	/*
+	/**
 	 * Saves the API key to extConf in localconf.php.
-	 * @param		string		The new Google Maps API Key.
+	 * @param		string		The new eBible API Key.
 	 * @return		none
 	 */	
 	function saveApiKey($dataArray) {
