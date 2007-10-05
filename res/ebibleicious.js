@@ -623,11 +623,11 @@ function findPassages(elm, class_name) {
 		'Lam\.?|Lament?|Lament\.?|Ezekiel|Ezek\.?|Daniel|Dan\.?|Hosea|Hos\.?|Joel|' +
 		'Jo\.?|Amos|Obadiah|Obad\.?|Jonah|Jon\.?|Micah|Mic\.?|Nahum|Nah\.?|' +
 		'Habakkuk|Hab?\.?|Habak\.?|Zephaniah|Zeph?\.?|Zph\.?|Haggai|Hag\.?|Hagg\.?|Zechariah|Zech?|' +
-		'Malachi|Malac\.?|Mal\.?|Mat{1,2}hew|Mat\.?|Mat?|Mt\.?|Mark|Mrk?\.?|Mk\.?|Luk?e?|Lk\.?|John|' +
-		'Jh?n\.?|Acts?|Ac\.?|Romans|Ro?m\.?|Corinthians|Cor\.?|Corin\.?|Galatians|Gal\.?|Galat\.?|Ephesians|Eph\.?|Ephes\.?|' +
+		'Malachi|Malac\.?|Mal\.?|Mat{1,2}hew|Mat\.?|Mat?|Mt\.?|Mark|Mrk\.?|Mk\.?|Luke?|Lk\.?|John|' +
+		'Jh?n\.?|Acts?|Ac\.?|Romans|Rom\.?|Corinthians|Cor\.?|Corin\.?|Galatians|Gal\.?|Galat\.?|Ephesians|Eph\.?|Ephes\.?|' +
 		'Philippians|Phili?|Phil\.?|Php|Colossians|Col\.?|Colos\.?|Thessalonians|Thes\.?|Timothy|Ti?m\.?|' +
-		'Titus|Tts\.?|Tit?\.?|Philemo?n?|Phl?m\.?|Hebrews|Hebr\.?|Heb\.?|James|Ja?m\.?|Jas\.?|Jms\.?|' +
-		'Peter|Pet\.?|Pt\.?|Jude|Ju\.?|Revelations?|Re?v\.?|Revel\.?';
+		'Titus|Tts\.?|Tit\.?|Philemon|Phl?m\.?|Hebrews|Hebr\.?|Heb\.?|James|Jam\.?|Jas\.?|Jms\.?|' +
+		'Peter|Pet\.?|Pt\.?|Jude|Ju\.?|Revelations?|Rv\.?';
     var ver = '\\d+(:\\d+)?(?:\\s?[-&]\\s?\\d+)?';
     var regex = '\\b(?:('+vol+')\\s+)?('+bok+')\\s+('+ver+'(?:\\s?[,]\\s?'+
         ver+')*)\\b';
