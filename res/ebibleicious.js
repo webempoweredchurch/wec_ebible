@@ -626,8 +626,8 @@ function findPassages(elm, class_name) {
 		'Malachi|Malac\.?|Mal\.?|Mat{1,2}hew|Mat\.?|Mat?|Mt\.?|Mark|Mrk?\.?|Mk\.?|Luk?e?|Lk\.?|John|' +
 		'Jh?n\.?|Acts?|Ac\.?|Romans|Ro?m\.?|Corinthians|Cor\.?|Corin\.?|Galatians|Gal\.?|Galat\.?|Ephesians|Eph\.?|Ephes\.?|' +
 		'Philippians|Phili?|Phil\.?|Php|Colossians|Col\.?|Colos\.?|Thessalonians|Thes\.?|Timothy|Ti?m\.?|' +
-		'Titus|Tts\.?|Tit\.?|Philemo?n?|Phl?m\.?|Hebrews|Hebr\.?|Heb\.?|James|Ja?m\.?|Jas\.?|Jms\.?|' +
-		'Peter|Pet\.?|Pt\.?|Jude|Ju\.?|Revelations?|Rev\.?|Revel\.?';
+		'Titus|Tts\.?|Tit?\.?|Philemo?n?|Phl?m\.?|Hebrews|Hebr\.?|Heb\.?|James|Ja?m\.?|Jas\.?|Jms\.?|' +
+		'Peter|Pet\.?|Pt\.?|Jude|Ju\.?|Revelations?|Re?v\.?|Revel\.?';
     var ver = '\\d+(:\\d+)?(?:\\s?[-&]\\s?\\d+)?';
     var regex = '\\b(?:('+vol+')\\s+)?('+bok+')\\s+('+ver+'(?:\\s?[,]\\s?'+
         ver+')*)\\b';
