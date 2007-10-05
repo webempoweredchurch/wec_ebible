@@ -614,15 +614,15 @@ function ebdLoad() {
  *************************************************************************/
 function findPassages(elm, class_name) {
     var vol = 'I+|1st|2nd|3rd|First|Second|Third|1|2|3';
-    var bok = 'Genesis|Gen?|Gen\.?|Exodus|Exod?|Exod\.?|Ex\.?|Leviticus|Lev\.?|Levit\.?|' +
-		'Numbers|Nmb\.?|Numb\.?|Num\.?|Deuteronomy|Deu\.?|Deut\.?|Dt\.?|Joshua|Josh?|Josh\.?|Jsh\.?|' +
-		'Judges|Jdg\.?|Judg\.?|Ruth|Ru\.?|Samuel|Sam\.?|Sml\.?|Kings|Kngs\.?|Kin\.?|' +
+    var bok = 'Genesis|Gen?|Ge?n\.?|Exodus|Exod?|Exod\.?|Ex\.?|Leviticus|Le?v\.?|Levit\.?|' +
+		'Numbers|Nmb\.?|Numb\.?|Nu?m\.?|Deuteronomy|Deu\.?|Deut\.?|Dt\.?|Joshua|Josh?|Josh\.?|Jsh\.?|' +
+		'Judges|Jdg\.?|Jgs|Judg\.?|Ruth|Ru\.?|Samuel|Sam\.?|Sml?\.?|Kings|Kn?gs\.?|Kin\.?|' +
 		'Chronicles|Chr\.?|Chron\.?|Ezra|Ez\.?|Nehemiah|Nehem\.?|Neh\.?|Esther|Esth\.?|Est\.?|Job|Jb\.?|Psalms?|Psa\.?|Ps\.?|' +
-		'Proverbs?|Prov\.?|Pr\.?|Ecclesiastes|Eccl\.?|Eccl?|Songs? of Solomon|Songs\.?|Song\.?|' +
+		'Proverbs?|Prov\.?|Pr\.?|Pv|Ecclesiastes|Eccl\.?|Eccl?|Sg|Songs? of So(lomon|l)|Songs\.?|Song\.?|' +
 		'Isaiah|Isa\.?|Is\.?|Jeremiah|Jer\.?|Jerem\.?|Lamentations|' +
-		'Lam\.?|Lament?|Lament\.?|Ezekiel|Ezek\.?|Ezk\.?|Daniel|Dan\.?|Hosea|Hos\.?|Joel|' +
-		'Jo\.?|Amos|Am\.?|Obadiah|Obad?|Obad\.?|Ob\.?|Jonah|Jon\.?|Micah|Mic\.?|Nahum|Nah\.?|' +
-		'Habakkuk|Hab\.?|Habak\.?|Zephaniah|Zeph\.?|Zph\.?|Haggai|Hag\.?|Hagg\.?|Zechariah|Zech?|' +
+		'Lam\.?|Lament?|Lament\.?|Ezekiel|Ezek\.?|Ezk\.?|Daniel|Da?n\.?|Hosea|Hos\.?|Joel|' +
+		'Jo\.?|Amos|Am\.?|Obadiah|Obad?|Obad\.?|Ob\.?|Jonah|Jon\.?|Micah|Mic?\.?|Nahum|Nah?\.?|' +
+		'Habakkuk|Hab?\.?|Habak\.?|Zephaniah|Zeph?\.?|Zph\.?|Haggai|Hag\.?|Hagg\.?|Zechariah|Zech?|' +
 		'Malachi|Malac\.?|Mal\.?|Mat{1,2}hew|Mat\.?|Mat?|Mt\.?|Mark|Mrk\.?|Mk\.?|Luke|Lk\.?|John|' +
 		'Jhn\.?|Jo\.?|Acts?|Ac\.?|Romans|Rom\.?|Corinthians|Cor\.?|Corin\.?|Galatians|Gal\.?|Galat\.?|Ephesians|Eph\.?|Ephes\.?|' +
 		'Philippians|Phili?|Phil\.?|Colossians|Col\.?|Colos\.?|Thessalonians|Thes\.?|Timothy|Tim\.?|' +
