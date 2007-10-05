@@ -618,7 +618,7 @@ function findPassages(elm, class_name) {
 		'Numbers|Nmb\.?|Numb\.?|Num\.?|Deuteronomy|Deu\.?|Deut\.?|Dt\.?|Joshua|Josh?|Josh\.?|Jsh\.?|' +
 		'Judges|Jdg\.?|Judg\.?|Ruth|Ru\.?|Samuel|Sam\.?|Sml\.?|Kings|Kngs\.?|Kin\.?|' +
 		'Chronicles|Chr\.?|Chron\.?|Ezra|Ez\.?|Nehemiah|Nehem\.?|Neh\.?|Esther|Esth\.?|Est\.?|Job|Jb\.?|Psalms?|Psa\.?|Ps\.?|' +
-		'Proverbs?|Prov\.?|Pr\.?|Ecclesiastes|Eccl\.?|Eccl?|Songs?ofSolomon|Songs\.?|Song\.?|' +
+		'Proverbs?|Prov\.?|Pr\.?|Ecclesiastes|Eccl\.?|Eccl?|Songs? of Solomon|Songs\.?|Song\.?|' +
 		'Isaiah|Isa\.?|Is\.?|Jeremiah|Jer\.?|Jerem\.?|Lamentations|' +
 		'Lam\.?|Lament?|Lament\.?|Ezekiel|Ezek\.?|Ezk\.?|Daniel|Dan\.?|Hosea|Hos\.?|Joel|' +
 		'Jo\.?|Amos|Am\.?|Obadiah|Obad?|Obad\.?|Ob\.?|Jonah|Jon\.?|Micah|Mic\.?|Nahum|Nah\.?|' +
