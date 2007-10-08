@@ -3,7 +3,7 @@
 ########################################################################
 # Extension Manager/Repository config file for ext: "wec_ebible"
 #
-# Auto generated 03-08-2007 16:45
+# Auto generated 08-10-2007 12:28
 #
 # Manual updates:
 # Only the data in the array - anything else is removed by next write.
@@ -29,7 +29,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'clearCacheOnLoad' => 1,
 	'lockType' => '',
 	'author_company' => 'Foundation for Evangelism',
-	'version' => '1.0.0-dev',
+	'version' => '1.0.0',
 	'constraints' => array(
 		'depends' => array(
 		),
@@ -38,7 +38,7 @@ $EM_CONF[$_EXTKEY] = array(
 		'suggests' => array(
 		),
 	),
-	'_md5_values_when_last_written' => 'a:25:{s:9:"ChangeLog";s:4:"c619";s:10:"README.txt";s:4:"ee2d";s:26:"class.tx_wecebible_api.php";s:4:"1e56";s:32:"class.tx_wecebible_domainmgr.php";s:4:"7b19";s:36:"class.tx_wecebible_itemsProcFunc.php";s:4:"a894";s:12:"ext_icon.gif";s:4:"da4e";s:17:"ext_localconf.php";s:4:"41e9";s:14:"ext_tables.php";s:4:"a713";s:14:"ext_tables.sql";s:4:"8e6d";s:16:"locallang_db.xml";s:4:"f473";s:19:"doc/wizard_form.dat";s:4:"93f5";s:20:"doc/wizard_form.html";s:4:"6878";s:14:"mod1/clear.gif";s:4:"cc11";s:13:"mod1/conf.php";s:4:"d08c";s:14:"mod1/index.php";s:4:"068e";s:18:"mod1/locallang.xml";s:4:"8526";s:22:"mod1/locallang_mod.xml";s:4:"9cbc";s:19:"mod1/moduleicon.gif";s:4:"738b";s:14:"pi1/ce_wiz.gif";s:4:"1f46";s:30:"pi1/class.tx_wecebible_pi1.php";s:4:"6a2f";s:38:"pi1/class.tx_wecebible_pi1_wizicon.php";s:4:"5681";s:19:"pi1/flexform_ds.xml";s:4:"d140";s:17:"pi1/locallang.xml";s:4:"e85b";s:20:"static/constants.txt";s:4:"4596";s:16:"static/setup.txt";s:4:"8215";}',
+	'_md5_values_when_last_written' => 'a:30:{s:26:"class.tx_wecebible_api.php";s:4:"621c";s:32:"class.tx_wecebible_domainmgr.php";s:4:"ad1e";s:36:"class.tx_wecebible_itemsProcFunc.php";s:4:"7f06";s:12:"ext_icon.gif";s:4:"da4e";s:17:"ext_localconf.php";s:4:"4372";s:14:"ext_tables.php";s:4:"a14b";s:14:"ext_tables.sql";s:4:"8e6d";s:16:"locallang_db.xml";s:4:"a8a7";s:14:"doc/manual.sxw";s:4:"667b";s:14:"mod1/clear.gif";s:4:"cc11";s:13:"mod1/conf.php";s:4:"d08c";s:14:"mod1/index.php";s:4:"1587";s:18:"mod1/locallang.xml";s:4:"07ae";s:22:"mod1/locallang_mod.xml";s:4:"9cbc";s:19:"mod1/moduleicon.gif";s:4:"738b";s:14:"pi1/ce_wiz.gif";s:4:"1f46";s:30:"pi1/class.tx_wecebible_pi1.php";s:4:"4204";s:38:"pi1/class.tx_wecebible_pi1_wizicon.php";s:4:"f616";s:19:"pi1/flexform_ds.xml";s:4:"d140";s:17:"pi1/locallang.xml";s:4:"e85b";s:14:"pi2/ce_wiz.gif";s:4:"7a47";s:30:"pi2/class.tx_wecebible_pi2.php";s:4:"d9cd";s:38:"pi2/class.tx_wecebible_pi2_wizicon.php";s:4:"eb9b";s:19:"pi2/flexform_ds.xml";s:4:"d140";s:17:"pi2/locallang.xml";s:4:"5895";s:20:"pi2/translation.tmpl";s:4:"11e0";s:19:"res/ebibleicious.js";s:4:"2793";s:14:"res/styles.css";s:4:"3832";s:20:"static/constants.txt";s:4:"babe";s:16:"static/setup.txt";s:4:"fbac";}',
 	'suggests' => array(
 	),
 );
