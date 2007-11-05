@@ -52,7 +52,10 @@ class tx_wecebible_domainmgr {
 		
 		// get key from configuration
 		$keyConfig = $this->getExtConf('apiKey');
-				
+			
+		// return null if we didn't get an array
+		if(!is_array($keyConfig)) return null;
+		
 		// get current domain
 		if($domain == null)	$domain = t3lib_div::getIndpEnv('HTTP_HOST');
 		
