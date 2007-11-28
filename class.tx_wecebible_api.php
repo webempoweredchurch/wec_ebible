@@ -53,6 +53,7 @@ class tx_wecebible_api {
 	
 		if($conf['config.']['useExternalCSS']) {
 			$includeCSS = '<link href="http://ebible.com/stylesheets/ebSnippet.css" media="screen" rel="stylesheet" type="text/css" />';
+			$includeCSS .= '<style type="text/css">.footnote { display: none; !important}</style>';
 		}
 	
 		$argArray = array();

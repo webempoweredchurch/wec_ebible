@@ -30,13 +30,6 @@ plugin.tx_wecebible_pi2 {
 	hideIfUserTranslationNotAllowed = 1
 }
 
-page.headerData.1736 = HTML
-page.headerData.1736.value (
-	<style type="text/css">
-		.footnote { display: none; !important}
-	</style>
-)
-
 # Include the PHP
 includeLibs.tx_wecebible_api = EXT:wec_ebible/class.tx_wecebible_api.php
 plugin.tx_wecebible_api = USER_INT
