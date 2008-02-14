@@ -672,46 +672,52 @@ function findPassages(elm, class_name) {
 /*************************************************************************
  * traverseDOM - Traverses the DOM applying the regex
  *************************************************************************/
+
 function traverseDOM(node, depth, textproc) {
-    var skipre = /^(a|script|style|textarea|h1|h2|h3|h4|h5|h6|h7|h8)/i;
-    var count = 0;
-    while (node && depth > 0) {
-        count ++;
-        if (count >= eBibleicious.max_nodes) {
-            var handler = function() {
-                traverseDOM(node, depth, textproc);
-            };
-            setTimeout(handler, 50);
-            return;
-        }
+	var skipre = /^(a|script|style|textarea|h1|h2|h3|h4|h5|h6|h7|h8)/i;
+	var count = 0;
+	while (node && depth > 0) {
+		count ++;
+		if (count >= eBibleicious.max_nodes) {
+			var handler = function() {
+				traverseDOM(node, depth, textproc);
+			};
+			setTimeout(handler, 50);
+			return;
+		}
 
-        switch (node.nodeType) {
-            case 1: // ELEMENT_NODE
-                if (!skipre.test(node.tagName) && node.childNodes.length > 0) {
-                    node = node.childNodes[0];
-                    depth ++;
-                    continue;
-                }
-                break;
-            case 3: // TEXT_NODE
-            case 4: // CDATA_SECTION_NODE
-                node = textproc(node);
-                break;
-        }
+		try {
+			switch (node.nodeType) {
+				case 1: // ELEMENT_NODE
+				if (!skipre.test(node.tagName) && node.childNodes.length > 0) {
+					node = node.childNodes[0];
+					depth ++;
+					continue;
+				}
+				break;
+				case 3: // TEXT_NODE
+				case 4: // CDATA_SECTION_NODE
+				node = textproc(node);
+				break;
+			}
 
-        if (node.nextSibling) {
-            node = node.nextSibling;
-        } else {
-            while (depth > 0) {
-                node = node.parentNode;
-                depth --;
-                if (node.nextSibling) {
-                    node = node.nextSibling;
-                    break;
-                }
-            }
-        }
-    }
+			if (node.nextSibling) {
+				node = node.nextSibling;
+			} else {
+				while (depth > 0) {
+					node = node.parentNode;
+					depth --;
+					if (node.nextSibling) {
+						node = node.nextSibling;
+						break;
+					}
+				}
+			}
+		} 
+		catch(e) {
+			return;
+		}
+	}
 }
 
 /*************************************************************************
