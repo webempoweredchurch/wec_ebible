@@ -77,7 +77,7 @@ function eventTarget(event) {
 /******************************************************************************
 *  Cross browser way to add and remove events
 ******************************************************************************/
-function addEvent(obj, evType, fn, useCapture){
+function addEBEvent(obj, evType, fn, useCapture){
   if (obj.addEventListener){
     obj.addEventListener(evType, fn, useCapture);
     return true;
@@ -646,14 +646,14 @@ function findPassages(elm, class_name) {
             } else {
                 anchor = node.ownerDocument.createElement('A');
                 anchor.setAttribute('href', 'javascript://');
-                addEvent(anchor, 'click', eBibleicious.onclick, false);
+                addEBEvent(anchor, 'click', eBibleicious.onclick, false);
                 //anchor.onclick = eBibleicious.onclick;
                 if (eBibleicious.mode == 'mouseover') {
                     anchor.name = val;
-                    addEvent(anchor, 'mouseover', onShowVersePopup, false);
-                    addEvent(document, 'mouseup', onHideVersePopup, true);             
+                    addEBEvent(anchor, 'mouseover', onShowVersePopup, false);
+                    addEBEvent(document, 'mouseup', onHideVersePopup, true);             
                 } else {
-                    addEvent(anchor, 'mouseover', eBibleicious.showTitle, false);
+                    addEBEvent(anchor, 'mouseover', eBibleicious.showTitle, false);
                     //anchor.mouseover = eBibleicious.showTitle;
                 }
             }
