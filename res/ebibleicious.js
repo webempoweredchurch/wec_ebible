@@ -89,7 +89,7 @@ function addEBEvent(obj, evType, fn, useCapture){
   }
 }
 
-function removeEvent(obj, evType, fn, useCapture){
+function removeEBEvent(obj, evType, fn, useCapture){
   if (obj.removeEventListener){
     obj.removeEventListener(evType, fn, useCapture);
     return true;
