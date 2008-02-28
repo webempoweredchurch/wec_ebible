@@ -351,6 +351,7 @@ function createPopup(id, passage){
   popup.style.fontFamily='arial';
   popup.style.fontSize='11';
   popup.style.padding='0';
+  popup.style.zIndex='5';
   popup.style.color='#777';
   popup.style.background='#FFFFFF';
   popup.style.filter='alpha(opacity=9S9)'; // IE
