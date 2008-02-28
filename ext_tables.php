@@ -60,4 +60,8 @@ t3lib_extMgm::addTCAcolumns('fe_users', $translationTCA, 1);
 $TCA['fe_users']['interface']['showRecordFieldList'] .= ',tx_wecebible_translation';
 t3lib_extMgm::addToAllTCAtypes('fe_users', 'tx_wecebible_translation');
 
+/* Add CSH for the translation field */
+t3lib_extMgm::addLLrefForTCAdescr('fe_users','EXT:wec_ebible/csh/locallang_csh_feusers.xml');
+
+
 ?>
