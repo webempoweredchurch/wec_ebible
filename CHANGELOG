@@ -1,0 +1,3 @@
+[NEW]	update mod inclusion to symlink-friendly and preferred version.
+[FIXED]	add closing ?> to some files
+[FIXED]	remove whitespace that could cause some errors.
