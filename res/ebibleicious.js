@@ -534,7 +534,7 @@ var eBibleicious = {
      * empty, or the element cannot be found, then document.body will be used,
      * i.e. the entire document will be passed through eBibleicious.
      */
-    element: 'content',
+    element: '',
 
     /**
      * Maximum number of DOM text nodes to process before handing the event
