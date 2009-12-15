@@ -227,7 +227,8 @@ class  tx_wecebible_module1 extends t3lib_SCbase {
 		
 		$content = array();
 		$content[] = '<style type="text/css" media="screen">input[type=image] {border: none; background: none;}</style>';
-		$content[] = '<p style="margin-bottom:15px;">';
+		$content[] = '<p style="font-size: 28px; line-height: 30px">Due to eBible.com restructuring, no API key is currently needed. It\'s safe to ignore the below! Enjoy!';
+		$content[] = '<p style="margin-bottom:15px; line-height: 18px">';
 		$content[] = $LANG->getLL('apiInstructions');
 		$content[] = '</p>';
 		
