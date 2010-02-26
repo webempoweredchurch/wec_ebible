@@ -52,7 +52,7 @@ class tx_wecebible_api {
 		if(!$conf['config.']['enableParsing']) return false;
 	
 		if($conf['config.']['useExternalCSS']) {
-			$includeCSS = '<link href="http://ebible.com/stylesheets/ebSnippet.css" media="screen" rel="stylesheet" type="text/css" />';
+			$includeCSS = '<link href="' . t3lib_extMgm::siteRelPath('wec_bible') .'res/styles.css" rel="stylesheet" type="text/css" />';
 			$includeCSS .= '<style type="text/css">.footnote { display: none; !important}</style>';
 		}
 	
