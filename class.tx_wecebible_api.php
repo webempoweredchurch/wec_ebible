@@ -52,11 +52,6 @@ class tx_wecebible_api {
 		// only load this plugin and parse if it's enabled
 		if(!$conf['config.']['enableParsing']) return false;
 
-		if($conf['config.']['useExternalCSS']) {
-			$includeCSS = '<link href="' . t3lib_extMgm::siteRelPath('wec_ebible') .'res/styles.css" media="screen" rel="stylesheet" type="text/css" />';
-			$includeCSS .= '<style type="text/css">.footnote { display: none; !important}</style>';
-		}
-
 		$argArray = array();
 
 		/* Processs cObjects */
@@ -78,9 +73,8 @@ class tx_wecebible_api {
 
 		$argString = implode("&", $argArray);
 
-		/* Include javascript header */
+		/* Include javascript header. Since this is a USER_INT, we're using additionalHeaderData and not the page renderer. */
 		$GLOBALS['TSFE']->additionalHeaderData[] = '<script type="text/javascript" src="' . self::VERSELINK_URL . '?' . $argString . '"></script>';
-		$GLOBALS['TSFE']->additionalHeaderData[] = $includeCSS;
 	}
 
 	/**
