@@ -20,10 +20,6 @@ includeLibs.tx_wecebible_api = EXT:wec_ebible/class.tx_wecebible_api.php
 plugin.tx_wecebible_api = USER_INT
 plugin.tx_wecebible_api.userFunc = tx_wecebible_api->main
 
-# Includes the eBible Javascript API.  If you customize the Typoscript setup for
-# tx_wecebible_api in any way, the line below should be copied to the bottom
-# of your Typoscript page template.  Modifications to the constants are fine,
-# but setup modifications will not appear unless the Typoscript is in the
-# Typoscript page template.
-page.1736 < plugin.tx_wecebible_api
+# Includes the eBible Javascript API.
+page.1736 <= plugin.tx_wecebible_api
 
