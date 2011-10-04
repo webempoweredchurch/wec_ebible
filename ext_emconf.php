@@ -29,7 +29,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'clearCacheOnLoad' => 1,
 	'lockType' => '',
 	'author_company' => 'Christian Technology Ministries International Inc.',
-	'version' => '1.0.6',
+	'version' => '2.0.0-dev',
 	'constraints' => array(
 		'depends' => array(
 		),
