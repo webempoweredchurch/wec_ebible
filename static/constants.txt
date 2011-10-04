@@ -3,7 +3,7 @@ plugin.tx_wecebible_api {
 	# cat=WEC eBible//10; type=boolean; label=Enable Scripture parsing: Enables Scripture parsing on this page
 	enableParsing = 1
 
-	# cat=WEC eBible//17; type=options [English Standard Version=ESV, Holman Christian Standard Bible=HCSB, King James Version=KJV, New American Standard Bible=NASB, New Century Version=NCV, New King James Version=NKJV, New International Version=NIV, The Message=MSG, Today's New International Version=TNIV, 1909 Spanish Reina-Valera Antigua=SpaRV, Italian Riveduta (1927)=ItalRV]; label=Translation
+	# cat=WEC eBible//17; type=user[EXT:wec_ebible/class.tx_wecebible_itemsProcFunc.php:&tx_wecebible_itemsProcFunc->getSelectForConstants]; label=Translation
 	translation =
 
 	# cat=WEC eBible//18; type=boolean; label=Allow User Definable Translation?:This will allow FE users to choose their preferred translation

@@ -26,20 +26,8 @@ $translationTCA = array(
 			'size' => 1,
 			'items' => Array (
 				Array('', ''),
-				Array('English Standard Version', 'ESV'),
-				Array('Holman Christian Standard Bible', 'HCSB'),
-				Array('King James Version', 'KJV'),
-				Array('New American Standard Bible', 'NASB'),
-				Array('New Century Version', 'NCV'),
-				Array('New King James Version', 'NKJV'),
-				Array('New International Version', 'NIV'),
-				Array('The Message', 'MSG'),
-				Array('Today\'s New International Version', 'TNIV'),
-				Array('------------------------------', '--div--'),
-				Array('1909 Spanish Reina-Valera Antigua', 'SpaRV'),
-				Array('Italian Riveduta (1927)', 'ItalRV'),
 			),
-			// 'itemsProcFunc' => 'tx_wecebible_itemsProcFunc->getBibleTranslations'
+			'itemsProcFunc' => 'tx_wecebible_itemsProcFunc->getBibleTranslations'
 		)
 	),
 );

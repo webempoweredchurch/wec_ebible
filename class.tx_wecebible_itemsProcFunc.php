@@ -140,27 +140,28 @@ class tx_wecebible_itemsProcFunc {
 	 * used until supported by the TYPO3 core.
 	 *
 	 * @param	array	Array of parameters.  Contains the field name and value.
+	 * @param	object	Parent Object.
 	 * @return	string
 	 */
-	function getSelectForConstants($params) {
+	function getSelectForConstants($params, $parentObject) {
 		$arr = array();
-		$fN = $params['fieldName'];
-		$fV = $params['fieldValue'];
+		$fieldName = $params['fieldName'];
+		$fieldValue = $params['fieldValue'];
 
 		$translations = tx_wecebible_itemsProcFunc::getBibleTranslations($arr);
 		$translations = $translations['items'];
 
-		$c = array();
-		$c[] = '<select name="'. $fN .'">';
+		$content = array();
+		$content[] = '<select name="'. $fieldName .'">';
 		foreach( $translations as $key => $item ) {
-			if ($item[1] == $fV) {
-				$c[] = '<option value="'. $item[1] .'" selected="selected">'.$item[0].'</option>';
+			if ($item[1] == $fieldValue) {
+				$content[] = '<option value="'. $item[1] .'" selected="selected">'.$item[0].'</option>';
 			} else {
-				$c[] = '<option value="'. $item[1] .'">'.$item[0].'</option>';
+				$content[] = '<option value="'. $item[1] .'">'.$item[0].'</option>';
 			}
 		}
-		$c[] = '</select>';
-		return implode(chr(10), $c);
+		$content[] = '</select>';
+		return implode(chr(10), $content);
 	}
 }
 
