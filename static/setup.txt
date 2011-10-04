@@ -1,21 +1,6 @@
 plugin.tx_wecebible_api.url {
-	key = TEXT
-	key.value =
-	
-	mode = TEXT
-	mode.value = {$plugin.tx_wecebible_api.mode}
-	
 	translation = TEXT
 	translation.value = {$plugin.tx_wecebible_api.translation}
-	
-	new_window = TEXT
-	new_window.value = {$plugin.tx_wecebible_api.new_window}
-	
-	related_topics = TEXT
-	related_topics.value = {$plugin.tx_wecebible_api.related_topics}
-	
-	element = TEXT
-	element.value = {$plugin.tx_wecebible_api.element}
 }
 
 plugin.tx_wecebible_api.config {
@@ -37,8 +22,8 @@ plugin.tx_wecebible_api.userFunc = tx_wecebible_api->main
 
 # Includes the eBible Javascript API.  If you customize the Typoscript setup for
 # tx_wecebible_api in any way, the line below should be copied to the bottom
-# of your Typoscript page template.  Modifications to the constants are fine, 
-# but setup modifications will not appear unless the Typoscript is in the 
+# of your Typoscript page template.  Modifications to the constants are fine,
+# but setup modifications will not appear unless the Typoscript is in the
 # Typoscript page template.
 page.1736 < plugin.tx_wecebible_api
 
