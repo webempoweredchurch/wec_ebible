@@ -32,6 +32,13 @@ $translationTCA = array(
 	),
 );
 
+// Workaround sr_feuser_register's inability to handle itemsProcFun by inserting items manually.
+if (TYPO3_MODE == 'FE') {
+	$pObj = new stdClass();
+	t3lib_div::callUserFunction($translationTCA['tx_wecebible_translation']['config']['itemsProcFunc'], $translationTCA['tx_wecebible_translation']['config'], $pObj);
+	unset($translationTCA['tx_wecebible_translation']['config']['itemsProcFunc']);
+}
+
 t3lib_extMgm::addTCAcolumns('fe_users', $translationTCA, 1);
 $TCA['fe_users']['interface']['showRecordFieldList'] .= ',tx_wecebible_translation';
 t3lib_extMgm::addToAllTCAtypes('fe_users', 'tx_wecebible_translation');

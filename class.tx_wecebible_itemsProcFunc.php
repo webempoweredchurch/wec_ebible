@@ -132,6 +132,15 @@ class tx_wecebible_itemsProcFunc {
 		$config['items'][] = array('--- Xhosa ---', '--div--');
 		$config['items'][] = array('Xhosa', 'Xhosa');
 
+		// Workaround sr_feuser_register's issues with duplicate values and inability to build optgroups
+		if (TYPO3_MODE == 'FE') {
+			foreach ($config['items'] as &$item) {
+				if ($item[1] == '--div--') {
+					$item[1] = $item[0];
+				}
+			}
+		}
+
 		return $config;
 	}
 
