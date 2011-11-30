@@ -12,7 +12,7 @@
 
 $EM_CONF[$_EXTKEY] = array(
 	'title' => 'WEC eBible Tools',
-	'description' => 'Provides access to eBible.com toolkit which includes Scripture parsing and Verse of the Day.',
+	'description' => 'Provides access to eBible.com scripture parsing and popups.',
 	'category' => 'plugin',
 	'author' => 'Web-Empowered Church Team',
 	'author_email' => 'ebible@webempoweredchurch.org',
